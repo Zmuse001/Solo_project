@@ -1,0 +1,11 @@
+<h1><%= @nutrition.title %></h1>
+
+<p><%= @nutrition.body %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_nutrition_path(@nutrition) %></li>
+  <li><%= link_to "Destroy", nutrition_path(@nutrition), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>

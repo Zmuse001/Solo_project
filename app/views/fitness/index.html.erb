@@ -1,0 +1,16 @@
+<h1>Fitness</h1>
+
+Our Workout has <%= Fitness.public_count %> Exercises and counting!
+
+<ul>
+  <% @fitness.each do |fitness| %>
+    <% unless fitness.archived? %>
+      <li>
+        <%= link_to fitness.title, fitness %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+
+<%= link_to "New Exercise", new_fitness_path %>

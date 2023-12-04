@@ -1,0 +1,11 @@
+<h1>Nutrition</h1>
+
+<ul>
+  <% @nutritions.each do |nutrition| %>
+    <li>
+    <%= link_to nutrition.title, nutrition %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Meal", new_nutrition_path %>
