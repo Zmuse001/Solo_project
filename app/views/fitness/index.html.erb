@@ -1,0 +1,24 @@
+<h1>Fitness</h1>
+<header>
+<%= stylesheet_link_tag 'fitness' %>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>User Input</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fitness.each do |fitness| %>
+      <tr>
+        <td><%= fitness.user_input %></td>
+        <td><%= link_to 'Details', fitness_path(fitness) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to "New Workout", new_fitness_path(@fitness) %>

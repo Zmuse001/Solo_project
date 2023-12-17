@@ -1,0 +1,20 @@
+
+<%= form_with(model: @profile, local: true) do |form| %>
+    
+  <div>
+    <%= form.label :user_input, "edit your Height:" %>
+    <br>
+    <%= form.text_area :user_input, placeholder: "I am this feet tall" %>
+  </div>
+  <div>
+    <%= form.label :user_input, "edit your Weight:" %>
+    <br>
+    <%= form.text_area :user_input, placeholder: "I weigh " %>
+  </div>
+  <div>
+    <%= form.label :user_input, "edit activity level:" %>
+    <br>
+    <%= form.text_area :user_input, placeholder: "I am this active " %>
+  </div>
+  <%= form.submit "update profile" %>
+<% end %>

@@ -1,0 +1,37 @@
+<header>
+<%= stylesheet_link_tag 'nutrition' %>
+</header>
+
+<table>
+  <tr>
+    <th colspan="2"><h1><%= @nutrition.food_name %></h1></th>
+  </tr>
+
+  <tr>
+    <th>Serving Weight per Grams</th>
+    <th>Serving Units</th>
+    <th>Calories</th>
+    <th>Protein</th>
+    <th>Total Fat</th>
+    <th>Total Carbs</th>
+    <th>Sugar</th>
+  </tr>
+  <tr>
+    <td><%= @nutrition.serving_units %></td>
+    <td><%= @nutrition.serving_weight_grams %></td>
+    <td><%= @nutrition.calories %></td>
+    <td><%= @nutrition.protein %></td>
+    <td><%= @nutrition.total_fat %></td>
+    <td><%= @nutrition.total_carbohydrates %></td>
+    <td><%= @nutrition.sugar %></td>
+  </tr>
+</table>
+
+ 
+<ul>
+  <li><%= link_to "Edit", nutrition_path(@nutrition) %></li>
+  <li><%= link_to "Destroy", nutrition_path(@nutrition), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>

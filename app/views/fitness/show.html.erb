@@ -1,0 +1,28 @@
+<turbo-frame id="fitness_show_frame">
+  <header>
+    <%= stylesheet_link_tag 'fitness' %>
+  </header>
+
+  <table>
+  <tr>
+    <th>User Input</th>
+    <td><%= @fitness.user_input %> </td>
+  </tr>
+  <tr>
+    <th>Duration</th>
+    <td><%= @fitness.duration %> mins</td>
+  </tr>
+  <tr>
+    <th>Calories Burned</th>
+    <td><%= @fitness.calories_burned %> calories burned</td>
+  </tr>
+</table>
+
+  <ul>
+    <li><%= link_to "Edit", fitness_path(@fitness) %></li>
+    <li><%= link_to "Destroy", fitness_path(@fitness), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    }, remote: true  %></li>
+  </ul>
+</turbo-frame>

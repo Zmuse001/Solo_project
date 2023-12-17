@@ -1,0 +1,15 @@
+<h1>New Meal</h1>
+<%= form_with(model: @nutrition, url: nutritions_path, method: :post) do |form| %>
+    <div class="field">
+    <%= form.label :For %>
+    <%= form.hidden_field :log_date, value: Date.current %>
+    <span><%= Date.current %></span>
+  </div>
+  <div>
+    <%= form.label :user_input, "Enter your Meal:" %>
+    <br>
+    <%= form.text_area :user_input, placeholder: "I ate tuna sandwich with celery" %>
+  </div>
+  <%= form.submit "Log meal" %>
+<% end %>
+  
