@@ -1,0 +1,22 @@
+<div style="position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; background-color: black; padding: 10px; z-index: 100;">
+  <%= link_to 'Home', root_path, class: "btn btn-light"%> 
+  <% if user_signed_in? %>
+    <%= link_to "Fitness", new_fitness_path, class: "btn btn-light"%> 
+  <% end %>
+  <% unless user_signed_in? %>
+    <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-light"%>
+  <% else %>
+    <%= link_to 'Nutrition', nutritions_path, class:"btn btn-light" %>
+    <%= link_to 'Profile', profiles_path, class:"btn btn-light" %>
+  <% end %>
+  <div style="text-align: right; color: white;">
+    <% if user_signed_in? %>
+      <div style="display: flex; align-items: center;">
+        <div style="margin-right: 10px;"> <%= current_user.username %>!</div>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-light" %>
+      </div>
+    <% else %>
+      <%= button_to "Sign in", new_user_session_path, class: "btn btn-light" %>
+    <% end %>
+  </div>
+</div>

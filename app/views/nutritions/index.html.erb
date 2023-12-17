@@ -1,11 +1,24 @@
 <h1>Nutrition</h1>
+<header>
+<%= stylesheet_link_tag 'nutrition' %>
+</header>
 
-<ul>
-  <% @nutritions.each do |nutrition| %>
-    <li>
-    <%= link_to nutrition.title, nutrition %>
-    </li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Food Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @nutrition.each do |nutrition| %>
+      <tr>
+        <td><%= nutrition.food_name %></td>
+        <td><%= link_to 'Details', nutrition_path(nutrition) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New Meal", new_nutrition_path %>
+

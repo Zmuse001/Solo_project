@@ -1,22 +1,15 @@
-<%= form_with model: nutrition do |form| %>
-    <div>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
-      <% nutrition.errors.full_messages_for(:title).each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-  
-    <div>
-      <%= form.label :body %><br>
-      <%= form.text_area :body %><br>
-      <% nutrition.errors.full_messages_for(:body).each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-  
-    <div>
-      <%= form.submit %>
-    </div>
-  <% end %>
+<h1>New Meal</h1>
+<%= form_with(model: @nutrition, url: nutritions_path, method: :post) do |form| %>
+    <div class="field">
+    <%= form.label :For %>
+    <%= form.hidden_field :log_date, value: Date.current %>
+    <span><%= Date.current %></span>
+  </div>
+  <div>
+    <%= form.label :user_input, "Enter your Meal:" %>
+    <br>
+    <%= form.text_area :user_input, placeholder: "I ate tuna sandwich with celery" %>
+  </div>
+  <%= form.submit "Log meal" %>
+<% end %>
   

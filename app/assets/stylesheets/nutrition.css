@@ -1,0 +1,44 @@
+body {
+  font-family: 'papyrus';
+  font-size: 20px;
+  background-color: #f5f5f5;
+  background-color: darkgreen;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+table {
+  width: 60%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px; /* Increased font size for better readability */
+  color: #333; /* Adjusted text color */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px; /* Increased font size for a more prominent header */
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+td a {
+  color: white; /* Set link color to a nice blue */
+  text-decoration: none;
+}

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,54 +12,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_03_231930) do
+ActiveRecord::Schema[7.1].define(version: 20_231_204_194_439) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "comments", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.bigint "fitness_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "status"
-    t.index ["fitness_id"], name: "index_comments_on_fitness_id"
+  create_table 'comments', force: :cascade do |t|
+    t.string 'commenter'
+    t.text 'body'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "fitnesses", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "status"
+  create_table 'fitnesses', force: :cascade do |t|
+    t.string 'user_input'
+    t.integer 'duration'
+    t.integer 'calories_burned'
+    t.integer 'met'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_fitnesses_on_user_id'
   end
 
-  create_table "nutritions", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'nutritions', force: :cascade do |t|
+    t.string 'food_name'
+    t.integer 'serving_units'
+    t.integer 'serving_weight_grams'
+    t.integer 'protein'
+    t.integer 'calories'
+    t.integer 'total_fat'
+    t.integer 'total_carbohydrates'
+    t.integer 'sugar'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_nutritions_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "username", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'profiles', force: :cascade do |t|
+    t.integer 'height'
+    t.integer 'weight'
+    t.string 'sex'
+    t.string 'activity_level'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "comments", "fitnesses"
+  create_table 'users', force: :cascade do |t|
+    t.string 'first_name', null: false
+    t.string 'last_name', null: false
+    t.string 'username', null: false
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.string 'confirmation_token'
+    t.datetime 'confirmed_at'
+    t.datetime 'confirmation_sent_at'
+    t.string 'unconfirmed_email'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['confirmation_token'], name: 'index_users_on_confirmation_token', unique: true
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  end
+
+  add_foreign_key 'fitnesses', 'users'
+  add_foreign_key 'nutritions', 'users'
 end

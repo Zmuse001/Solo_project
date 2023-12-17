@@ -1,4 +1,14 @@
-<div>
-  <%= form.label :status %><br>
-  <%= form.select :status, Visible::VALID_STATUSES, selected: fitness.status || 'public' %>
-</div>
+<h1>New Workout</h1>
+<%= form_with(model: @fitness, url: fitness_index_path, method: :post) do |form| %>
+    <div class="field">
+    <%= form.label :For %>
+    <%= form.hidden_field :log_date, value: Date.current %>
+    <span><%= Date.current %></span>
+  </div>
+  <div>
+    <%= form.label :user_input, "Enter your workout:" %>
+    <br>
+    <%= form.text_area :user_input, placeholder: "e.g., swam for 1 hour and ran for 30 minutes" %>
+  </div>
+  <%= form.submit "Log Workout" %>
+<% end %>

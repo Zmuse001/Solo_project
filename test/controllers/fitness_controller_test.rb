@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class FitnessControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do

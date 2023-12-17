@@ -1,16 +1,24 @@
 <h1>Fitness</h1>
+<header>
+<%= stylesheet_link_tag 'fitness' %>
+</header>
 
-Our Workout has <%= Fitness.public_count %> Exercises and counting!
-
-<ul>
-  <% @fitness.each do |fitness| %>
-    <% unless fitness.archived? %>
-      <li>
-        <%= link_to fitness.title, fitness %>
-      </li>
+<table>
+  <thead>
+    <tr>
+      <th>User Input</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fitness.each do |fitness| %>
+      <tr>
+        <td><%= fitness.user_input %></td>
+        <td><%= link_to 'Details', fitness_path(fitness) %></td>
+      </tr>
     <% end %>
-  <% end %>
-</ul>
+  </tbody>
+</table>
 
 
-<%= link_to "New Exercise", new_fitness_path %>
+<%= link_to "New Workout", new_fitness_path(@fitness) %>

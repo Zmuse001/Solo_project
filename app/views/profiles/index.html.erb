@@ -1,0 +1,22 @@
+<header>
+  <%= stylesheet_link_tag 'profile' %>
+</header>
+
+<div>
+  <h1>My Profile</h1>
+
+  <p><strong>Height:</strong> <%=  %></p>
+  <p><strong>Weight:</strong> <%=  %></p>
+  <p><strong>Sex:</strong> <%=  %></p>
+  <p><strong>Activity Level:</strong> <%=  %></p>
+
+  <ul>
+    <li><%= link_to "Edit", edit_profile_path(@profile) %></li>
+    <li><%= link_to "Destroy", profile_path(@profile), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %></li>
+  </ul>
+
+  <%= link_to "Edit my Profile", new_profile_path %>
+</div>

@@ -1,8 +1,6 @@
 body {
     color: lime; 
-    text-align: center;
-    margin-top: 300px;
     font-size: 20px;
-    background-image: url(https://as1.ftcdn.net/v2/jpg/01/64/56/20/1000_F_164562000_AuB4fwJAm5KWP9KxpYvXqH86gVDpnRho.jpg);
+    background-color:brown;
     background-size: cover;
 }

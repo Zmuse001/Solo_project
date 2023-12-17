@@ -1,8 +1,54 @@
 body {
-    color: orange; 
-    text-align: center;
-    margin-top: 300px;
-    font-size: 20px;
-    background-image: url(https://www.publicdomainpictures.net/pictures/540000/velka/man-in-a-gym-16958160123Wx.jpg);
-    background-size: cover;
+  color: orange;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+  background-color: cadetblue;
+  background-size: cover;
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  background-color: white; /* Fixed typo in background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  color: orange; /* Set text color to orange */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  padding: 20px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 0 10px;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: black;
+ 
 }
